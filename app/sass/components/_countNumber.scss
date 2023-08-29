@@ -1,0 +1,95 @@
+@use "../functions" as f;
+@use "../varibles" as v;
+@use "../bearkpoints" as g;
+
+.countNumber{
+   width: 100%;
+   height: auto;
+
+   &__bg{
+      
+      max-width: f.rem(1170);
+      height: f.rem(335);
+      margin: 0 auto;
+      background-image: url('/app/image/BG-bandner.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      padding: 0 1rem;
+      @media(max-width:f.em(490)){
+         padding: 2rem 0 0 0;
+         height: f.rem(496);
+
+        
+     }
+
+      .number__flex{
+         max-width: f.rem(950);
+         height: f.rem(298);
+         margin: 0 auto;
+         background-image: url('/app/image/BG-map.png');
+         background-repeat: no-repeat;
+         background-position: center;
+         background-size: cover;
+        
+         & {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+
+            @media(max-width:f.em(490)){
+
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+            }
+
+         }
+
+         .items__number{
+
+            width: f.rem(160);
+            height: f.rem(136);
+            text-align: left;
+
+            i{
+               display: block;
+               width: f.rem(100);
+               height: f.rem(8);
+               background-color: v.$Orange;
+               margin-bottom: f.rem(16);
+            }
+            p{
+               font-size: f.rem(20);
+               font-weight: v.$bold;
+               color: v.$White;
+            }
+
+            h1{
+               font-size: f.rem(70);
+               font-weight: v.$bold;
+               color: v.$White;
+               margin-bottom: 0;
+               @media(max-width:f.em(490)){
+                 font-size: 3rem;     
+               }
+            }
+
+            .warpper__counter{
+               display: flex;
+               
+            }
+         }
+
+         @media(max-width:f.em(490)){
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            
+         }
+      }
+   }
+}

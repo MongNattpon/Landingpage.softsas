@@ -1,0 +1,166 @@
+@use '../functions'as f;
+@use '../varibles'as v;
+@use '../bearkpoints' as g;
+
+.slider{
+
+    width: 100%;
+    height: f.rem(800);
+    background-image: url('/app/image/bg-gray.png');
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: f.rem(70);
+    @media(max-width:f.em(1180)){
+       gap: 0;
+      }
+    @media(max-width:f.em(930)){
+        background-position: bottom;
+       display: flex;
+       flex-direction: column-reverse;
+       gap: 1rem;
+    }
+
+   
+   
+    &__wp{
+        padding:1rem 0 0;
+        width: f.rem(570); 
+        height: f.rem(232);
+        position: relative;
+        @media(max-width:f.em(490)){
+            width: 100%;
+        }
+        @media(max-width:f.em(930)){
+            height: f.rem(216);
+        }
+        
+        .slick-prev{
+
+            width: f.rem(30);
+            height: f.rem(30);
+            position: absolute;
+            bottom: -13%;
+            left: 43%;
+            background-color: v.$Orange;
+            border: none;
+            transition: all 300ms ease-in-out;
+            cursor:  pointer;
+
+
+            &::after{
+                position: absolute;
+                width: 5px;
+                height: 10px;
+                content: url("/app/image/Vector-1.png");
+                left: 40%;
+                top: 30%;
+
+                @media(max-width:f.em(490)){
+                    left: 42%;
+                    top: 25%;
+                }
+
+            }
+
+            &:hover{
+                box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+                
+            }
+
+        }
+        .slick-next{
+            width: f.rem(30);
+            height: f.rem(30);
+            position: absolute;
+            bottom: -13%;
+            right: 43%;
+            background-color: v.$Orange;
+            border: none;
+            transition: all 300ms ease-in-out;
+            cursor: pointer;
+            
+            &::after{
+                position: absolute;
+                content: url("/app/image/Vector-2.png");
+                width: 5px;
+                height: 10px;
+                left: 40%;
+                top: 30%;
+            
+                
+                @media(max-width:f.em(490)){
+                    left: 42%;
+                    top: 25%;
+                }
+
+            }
+
+            &:hover{
+                box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+            }
+        } 
+       
+
+
+            .warpper{
+                width: f.rem(570); 
+                height: f.rem(119);
+                margin-bottom: f.rem(33);
+                @media(max-width:f.em(490)){
+                    width: 100%;
+                }
+               
+
+                .slide{
+                    p{
+                        font-size: f.rem(18);
+                        font-weight: v.$medium;
+                        line-height: 1.5;
+                    }
+                }
+
+            }
+                   
+
+        .text{
+            margin-bottom: f.rem(27);
+            
+
+           h3{
+              font-size: f.rem(13);
+              color: v.$Gray;
+              font-weight: v.$medium;
+           }
+           p{
+             font-size: f.rem(11);
+             color: v.$Gray;
+             font-weight: v.$Regular;
+
+           }
+        }
+    }
+    .slick-slider{
+        position: initial !important;
+     }
+     .slider__image-person{
+
+        img{
+            width: 471px;
+            height: 467px; 
+            
+            
+            @media(max-width:f.em(1180)){
+                width: f.rem(400);
+                height: f.rem(400);
+              }
+
+              @include g.breakpoints-down(medium){
+                width: f.rem(320);
+                height: f.rem(320);
+              }
+        }
+     }
+}

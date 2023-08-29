@@ -1,0 +1,153 @@
+@use '../varibles' as v;
+@use '../functions'as f;
+@use '../bearkpoints'as g;
+
+
+.management{
+      width: 100%;
+      height: f.rem(770);
+
+      @media(max-width:f.em(650)){
+        height: auto;
+    }
+    @include g.breakpoints-down(large){
+         height: auto; 
+    }
+    //   border: 1px solid red;
+
+     &__head{
+
+         margin-top: f.rem(95);
+         text-align: center;
+         margin-bottom: f.rem(56);
+
+         p{
+           font-size: f.rem(14);
+           color: v.$Orange;
+           font-weight: v.$bold;
+         }
+         h1{
+            font-size: f.rem(40);
+            font-weight: v.$bold;
+         }
+     }
+
+      
+    .wapper__flex{
+      
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+
+        @include g.breakpoints-down(large){
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+    
+        .wapper__accordion{
+
+            @media(max-width:f.em(490)){
+                width: 100%;
+            }
+
+            .con{
+                margin-bottom: f.rem(20);
+                .accordion{
+                    display: flex;
+                   justify-content: space-between;
+                   align-items: center;
+                   padding: 1rem;
+                   width: f.rem(570);
+                   height: f.rem(48);
+                    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+                    transition: all 150ms ease-in-out;
+                    cursor: pointer;
+                    h1{
+                        margin-bottom: 0;
+                    }
+
+                    @media(max-width:f.em(490)){
+                        width: 100%;
+                    }
+   
+        
+                }
+                .accordion:after {
+                    content: '\002B';
+                    color: #777;
+                    font-weight: bold;
+                    float: right;
+                    margin-left: 5px;
+
+                }
+                .accordion:hover::after{
+                    color: #fff;
+
+                }
+                  
+                  .active:after {
+                    content: "\2212";
+                    color: #fff;
+                  }
+                
+                
+                
+                
+                  
+                
+                .panel{
+    
+                    width: f.rem(570);
+                    height: 0;
+                    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+                    transition: all 300ms ease-in-out;
+                     overflow: hidden;
+                     @media(max-width:f.em(490)){
+                        width: 100%;
+                    }
+
+    
+    
+    
+                    p{
+                        font-size: f.rem(13);
+                        font-weight: v.$Regular;
+                        line-height: 1.5;
+                        color: v.$darkGray;
+                        padding: 1rem;
+                    }
+    
+                }
+
+                .active ,.accordion:hover{
+                    background-color: v.$Orange;
+                    color: v.$White;   
+                    
+                }
+                
+               
+                
+            }
+        }
+    }
+
+    .image__dashbord{
+
+        
+        img{
+            width: f.rem(700);
+            height: f.rem(386);
+
+            @media(max-width:f.em(650)){
+                width: f.rem(640);
+            }
+            @media(max-width:f.em(570)){
+                width: f.rem(448);
+                height: f.rem(320);
+            }
+        }
+    }
+
+}
+

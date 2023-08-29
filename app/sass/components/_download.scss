@@ -1,0 +1,113 @@
+@use "../functions" as f;
+@use "../varibles" as v;
+@use "../bearkpoints" as g;
+
+.download {
+  width: 100%;
+  height: f.rem(480);
+  @media(max-width:f.em(850)){
+    height: f.rem(640);
+ }
+ 
+
+  &__wp {
+    background-image: url("/app/image/BG-map.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    max-width: 973px;
+    height: 290px;
+    margin-left: 13%;
+  }
+
+  &__bg {
+    max-width: 1170px;
+    height: 335px;
+    margin: 0 auto;
+    background-image: url("/app/image/BG-bandner.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-top: f.rem(100);
+    position: relative;
+
+    @media(max-width:f.em(850)){
+     height: f.rem(700);
+   }
+   @media(max-width:f.rem(400)){
+     height: f.rem(640);
+   }
+
+
+    .warpper_image {
+      display: flex;
+      align-items: start;
+      position: absolute;
+      top: 49px;
+      left: -44px;
+      width: 100%;
+      
+      @media(max-width:f.em(850)){
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         left: 0;
+      }
+
+       .image-macbook-two{
+        
+          img{
+            width: 600px;
+            height: 330.43px;
+
+            @media(max-width:f.rem(610)){
+               width: 100%;
+               height: 100%;
+            }
+          }
+       }
+
+      .title{
+         margin-top: f.rem(24);
+
+         @media(max-width:f.em(850)){
+          text-align: center;
+        }
+
+         h1{
+             font-size: f.rem(40);
+             font-weight: v.$bold;
+             color: v.$White;
+             margin-bottom: 0;
+
+             @media (max-width:f.em(1020)){
+              font-size: f.rem(24);
+              
+             }
+         }
+         
+         button{
+            width: f.rem(120);
+            height: f.rem(40);
+            margin-top: f.rem(39);
+            border-radius: f.rem(40);
+            border: none;
+            color: v.$White;
+            transition: all 300ms ease-in-out;
+            cursor: pointer;
+
+            &:hover{
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            }
+
+            @media (max-width:f.em(976)){
+              width: f.rem(112);
+              height: f.rem(33.6);
+              
+             }
+         }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+@use 'varibles' as v;
+@use 'functions' as f;
+
+html{
+    font-size: calc(60% + 0.8vmin);
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+}
+
+*,
+*::before,*::after{
+ box-sizing: inherit;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 100%;
+
+    
+}
+h1,
+p{
+    margin-top: 0;
+}
+ a, a:visited, a:hover{
+     text-decoration: none;
+     color: v.$White;
+ }
+ .container{
+    max-width: f.rem(1170);
+    margin: 0 auto;
+ }
+
+ .button{
+    background-color: v.$Orange;
+    font-weight: v.$medium;
+    text-align: center;
+
+    & a{
+     color: v.$White;      
+    }
+ }
+ 
+

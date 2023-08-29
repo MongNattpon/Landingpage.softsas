@@ -1,0 +1,122 @@
+@use '../functions'as f;
+@use '../varibles'as v;
+@use '../bearkpoints' as g;
+
+
+.work{
+    width: 100%;
+    height: f.rem(610);
+    text-align: center;
+    margin-top: f.rem(70);
+
+    @include g.breakpoints-down(small){
+        height: f.rem(1008);
+     }
+
+    &__title{
+
+        >p{
+            font-size: f.rem(14);
+            font-weight: v.$bold;
+            color: v.$Orange;
+            margin-bottom: f.rem(27);
+        } 
+
+        >h1{
+            font-size: f.rem(40);
+            font-weight: v.$bold;  
+            margin-bottom: f.rem(55);            
+        }
+    }
+
+    &__solid{
+        
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: f.rem(50);
+
+          
+        >h1{
+            font-size: f.rem(40);
+            font-weight: v.$bold;
+            color: v.$lightGray;
+            margin-bottom: 0;
+            &:not(:last-child){
+                margin-right: 1rem;
+           }
+        }
+        >h3{
+            
+            border-top-style: dashed;
+            color: v.$lightGray;
+            width: f.rem(330);
+            &:not(:last-child){
+                margin-right: 1rem;
+              }
+        }
+    }
+
+    &__warpper{
+        
+        height: auto;
+        display: flex;
+        justify-content: center;
+
+        @include g.breakpoints-down(small){
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+         }
+
+      .items-info{
+        width: f.rem(303);
+        height: f.rem(220);
+        text-align: center;
+        
+        &:not(:last-child){
+            margin-right: f.rem(84);
+
+            @include g.breakpoints-down(medium){
+               margin-right: 0;
+            }
+        }
+        >img{
+            width: 59px;
+            height: 60px;
+            margin-bottom: f.rem(25);   
+        }
+       
+
+        >h1{
+            font-size: f.rem(24);
+            font-weight: v.$bold;
+           margin-bottom: f.rem(25);
+        }
+        >p{
+            font-size: f.rem(13);
+            font-weight: v.$Regular;
+            color: v.$Gray;
+
+        }
+        span{
+            display: block;
+            padding: 0 0.5rem;
+        }
+      }
+        .items-info:nth-child(2){
+            img{
+                width: 68px;
+            }
+        }
+            .items-info:nth-child(3){
+            img{
+                    width: 68px;
+            }
+        }
+        
+     
+    }
+
+}

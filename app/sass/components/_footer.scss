@@ -1,0 +1,188 @@
+@use "../functions" as f;
+@use "../varibles" as v;
+@use "../bearkpoints" as g;
+
+.footer {
+    width: 100%;
+    height: auto;
+    position: relative;
+
+    &__flex {
+        max-width: f.rem(1170);
+        height: f.rem(187);
+        margin: 0 auto;
+       display: grid;
+       grid-template-columns: repeat(auto-fit, minmax(314px, 1fr));
+       margin-top: 100px;
+       padding: 0 0.5rem;
+
+       @media(max-width:f.em(642)){
+        height: f.rem(320);
+    }
+        .wp-con{
+            display: flex;
+            justify-content: space-between;
+            max-width: 672px;
+            height: 100%;
+        }
+
+        .wp-logo {
+            width: f.rem(242);
+            height: f.rem(134);
+
+            @media(max-width:f.em(642)){
+                width: 100%;
+                text-align: center;
+                padding: 0 2rem;
+            }
+
+            .logo {
+                img {
+                    width: 193.28px;
+                    height: 50px;
+                    margin-bottom: f.rem(14);
+                }
+
+                p {
+                    font-size: f.rem(13);
+                    font-weight: v.$Regular;
+                    color: v.$Gray;
+                    line-height: 1.3;
+                }
+            }
+        }
+
+        .company,
+        .product,
+        .Download,
+        .support {
+            h1 {
+                font-size: f.rem(20);
+                font-weight: v.$bold;
+                margin-bottom: f.rem(36);
+            }
+
+            p {
+                font-size: f.rem(13);
+                font-weight: v.$Regular;
+                color: v.$Gray;
+                cursor: pointer;
+                transition: all 300ms ease-in-out;
+
+                &:hover {
+                    color: v.$Orange;
+                }
+            }
+        }
+
+    }
+    hr{
+        max-width: 1170px;
+        padding: 0 0 0 3rem;
+        margin-top: f.rem(54);
+    }
+
+    .coppyright {
+        max-width: 1170px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding:  0 0.3rem;
+
+       &__title {
+        display: flex;
+         h5{
+              font-size: f.rem(14);
+              color: v.$Gray;
+              font-weight: v.$Regular;
+              text-align: center;
+         }
+         span{
+            color: v.$Gray;
+         }
+       }
+
+        &__social {
+            display: flex;
+
+            li{
+                 list-style: none;
+                .fac {
+                    width: 30px;
+                    height: 30px;
+                    border: 1px solid v.$broderGray;
+                    text-align: center;
+                    line-height: 2 ;
+                    border-radius: 30px;
+                    background-color: v.$White;
+                    color: v.$lightGray;
+                    transition: all 300ms ease-in-out;
+                    cursor: pointer;
+
+                    @include g.breakpoints-up(xlarge){
+                    line-height: 1.8;
+
+                    }
+
+                    &:hover{
+                        background-color: v.$lightBlue;
+                         color: v.$White;
+                    }
+                }
+
+                &:not(:last-child){
+                    margin-right: 1rem;
+                }
+
+                
+            }
+
+        }
+    }
+
+    .backTotop{
+           cursor: pointer;
+        .actop{
+            top: 60%;
+            opacity: 1;
+
+            @media(max-width:f.em(500)){
+               top: 69%;
+            }
+        }
+         
+        i{
+            
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            font-size:1.2rem;
+            text-align: center;
+            line-height: 2;
+            right: 20px;
+            top: 87%;
+            background-color: v.$White;
+            box-shadow:   rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            z-index: 1;
+            transition: all 300ms ease-in-out;
+            opacity: 0;
+
+
+            
+            
+            
+        }
+
+        @media(max-width:f.em(500)){
+            
+            i{
+                width: 33px;
+                height: 33px;
+            }
+         }
+        
+    }
+
+    
+}

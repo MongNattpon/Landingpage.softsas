@@ -1,0 +1,69 @@
+@use '../functions' as f;
+@use '../bearkpoints'as g;
+
+.banner{
+
+    width: 100%;
+    height: f.rem(144);
+    text-align: center;
+
+      @media(max-width: f.em(536)){
+         width: 100%;
+         height: f.rem(352);
+      }
+  
+    &__grid{
+
+        margin-top: f.rem(100);
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+         align-items: center;
+         grid-template-rows: 5rem;
+
+         @include g.breakpoints-down(medium){
+            margin-top: 0;
+            
+         }
+          .items{
+            text-align: end;
+             cursor: pointer;
+            padding: 0.5rem;
+
+            @include g.breakpoints-down(medium){
+               text-align: center;
+               
+            }
+
+          }
+
+
+         .items:nth-child(1){
+    
+            img{
+               max-width: 262px;
+               height: 50px;
+            }
+         }
+         .items:nth-child(2){
+              img{
+                max-width: 231px;
+                height: 50px;
+            }
+         }
+         .items:nth-child(3){
+              img{
+               max-width: 187.5px;
+                height: 50px;
+            }
+         }
+         .items:nth-child(4){
+              img{
+                max-width: 160px;
+                height:50px;
+            }
+         }
+   
+    }
+
+
+}

@@ -1,0 +1,68 @@
+@use '../functions'as f;
+@use '../varibles'as v;
+@use '../bearkpoints' as g;
+
+.blog{
+    width: 100%;
+    height: f.rem(640);
+    @media(max-width:f.em(750)){
+        height: auto;
+     }
+      
+    &__head{
+        margin-top: f.rem(100);
+        margin-bottom: f.rem(56);
+        text-align: center;
+        p{
+           font-size: f.rem(14);
+           font-weight: v.$bold;
+           color: v.$Orange;
+        }
+        h1{
+          font-size: f.rem(40);
+          font-weight: v.$bold;
+          margin-bottom: 0;
+        }
+        
+    }
+
+    &__flex{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: f.rem(30);
+            padding: 0 0.5rem;
+
+            @media(max-width:f.em(750)){
+               display: flex;
+               flex-direction: column; 
+            }
+
+        .card-items{
+           width: 370px;
+           height: 407px;
+           overflow: hidden;
+           box-shadow: rgba(111, 107, 100, 0.2) 0px 7px 29px 0px;
+
+            img{
+               width: 370px;
+               height: 250px;
+            }
+            p{
+                font-size: f.rem(13); 
+                font-weight: v.$Regular;
+                color: v.$Orange;
+                
+
+            }
+            h1{
+                font-size: f.rem(24);
+                font-weight: v.$bold;
+            }
+
+            p , h1{
+                padding:  0.5rem 0 0 1rem;
+            }
+        }
+    }
+}
